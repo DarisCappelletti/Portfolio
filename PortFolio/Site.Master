@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PortFolio.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" /> 
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        #btn-back-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          display: none;
+        }
+    </style>
+</head>
+<body style="padding-top: 80px;" data-bs-spy="scroll" data-bs-target="#nav-menu-top" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <nav id="nav-menu-top" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Daris Cappelletti</a>
+                <button class="navbar-toggler collapsed" 
+                    type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarColor01" 
+                    aria-controls="navbarColor01" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse" id="navbarColor01" style="">
+                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#scrollChiSono">
+                                Chi sono
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollEsperienzeLavorative">
+                                Esperienze lavorative
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollFormazione">
+                                Formazione
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollProgettiPersonali">
+                                Progetti personali
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollContatti">
+                                Contatti
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <button
+                    type="button"
+                    class="btn btn-danger btn-floating btn-lg"
+                    id="btn-back-to-top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+                <p>&copy; <%: DateTime.Now.Year %> - Daris Cappelletti</p>
+            </footer>
+
+            <!-- Go on top -->
+            <script>
+                //Get the button
+                let mybutton = document.getElementById("btn-back-to-top");
+
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function () {
+                    scrollFunction();
+                };
+
+                function scrollFunction() {
+                    if (
+                        document.body.scrollTop > 20 ||
+                        document.documentElement.scrollTop > 20
+                    ) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                }
+                // When the user clicks on the button, scroll to the top of the document
+                mybutton.addEventListener("click", backToTop);
+
+                function backToTop() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            </script>
+        </div>
+
+    </form>
+</body>
+</html>
