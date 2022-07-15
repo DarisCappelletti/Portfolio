@@ -13,6 +13,24 @@ namespace PortFolio {
     public partial class SiteMaster {
         
         /// <summary>
+        /// ulHomepage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulHomepage;
+        
+        /// <summary>
+        /// ulProgetti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ulProgetti;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

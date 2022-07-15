@@ -121,6 +121,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Gff3Reader\reader.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -159,6 +160,9 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Gff3Reader\UploadFiles\Homo_sapiens.GRCh38.105.chromosome.MT.gff3" />
+    <Content Include="Gff3Reader\UploadFiles\MMETPS0920.gff3" />
+    <Content Include="Gff3Reader\UploadFiles\MMETPS1039.gff3" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -297,6 +301,14 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Alerts.cs" />
+    <Compile Include="Gff3Reader\reader.aspx.cs">
+      <DependentUpon>reader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gff3Reader\reader.aspx.designer.cs">
+      <DependentUpon>reader.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -326,6 +338,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="lib\vendor\fontawesome\" />
+    <Folder Include="RicercaTreni\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

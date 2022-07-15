@@ -64,7 +64,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse" id="navbarColor01" style="">
-                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0" id="ulHomepage" runat="server">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#scrollChiSono">
                                 Chi sono
@@ -80,14 +80,35 @@
                                 Formazione
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#scrollProgettiPersonali">
-                                Progetti personali
-                            </a>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#scrollProgettiPersonali" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Progetti personali
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="Gff3Reader/reader.aspx">Gff3Reader</a></li>
+                            <li><a class="dropdown-item" href="#">Ricerca treni</a></li>
+                          </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#scrollContatti">
                                 Contatti
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0" id="ulProgetti" runat="server">
+                        <li class="nav-item">
+                            <a href="../Default.aspx" class="nav-link">
+                                HomePage
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                Gff3Reader
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                RicercaTreni
                             </a>
                         </li>
                     </ul>
