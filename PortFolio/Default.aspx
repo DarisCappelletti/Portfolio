@@ -164,8 +164,10 @@
                     <span class="badge rounded-pill bg-primary">Graph.js</span>
                 </div>
 
-                <p class="card-text">Nella soluzione è stato creato un progetto di Web API dove le strutture ed i comuni possono effettuare delle chiamate</p>
-                <p class="card-text">per gestire i procedimenti/le pratiche create nel sito.</p>
+                <p class="card-text">
+                    Nella soluzione è stato creato un progetto di Web API dove le strutture ed i comuni possono effettuare delle chiamate
+                    per gestire i procedimenti/le pratiche create nel sito.
+                </p>
 
                 Inoltre sono state integrate delle chiamate ad API esterne ovvero:
 
@@ -328,17 +330,9 @@
                                 </div>
                                 <asp:Button ID="btnInviaEmail" runat="server" OnClick="btnInviaEmail_Click" CssClass="btn btn-secondary" Text="Invia" />
                             </div>
-                            <div class="card-footer">
-                                <small class="text-muted">
-                                    <span class="badge rounded-pill bg-primary">C# Web forms</span>
-                                    <span class="badge rounded-pill bg-primary">Html</span>
-                                    <span class="badge rounded-pill bg-primary">Jquery</span>
-                                    <span class="badge rounded-pill bg-primary">Javascript</span>
-                                </small>
-                            </div>
                         </div>
                     </div>
-                    <!-- Ricerca treni -->
+                    <!-- Social -->
                     <div class="col text-center">
                         <a class="badge social-pill" href="https://it.linkedin.com/in/dariscappelletti" target="_blank">
                             <i class="fa-brands fa-linkedin"></i> Linkedin
