@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PortFolio.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -62,7 +64,53 @@ namespace PortFolio
             int mesi = (zeroTime + span).Month - 1;
             int giorni = (zeroTime + span).Day;
 
-            return anni + " anni, " + mesi + " mesi e " + giorni + "giorni ";
+            string strAnni = anni > 1 ? anni + " anni, " : anni + " anno, ";
+            string strMesi = mesi > 1 ? mesi + " mesi e " : mesi + " mese e ";
+            string strGiorni = giorni > 1 ? giorni + " giorni " : giorni + " giorni ";
+
+            return strAnni + strMesi + strGiorni;
+        }
+
+        protected bool inviaEmail()
+        {
+            try
+            {
+                // Invio la mail al creatore dell'evento e alle trasmissioni del terzo livello
+                //var tipoEvento =
+                //    evento.TipoEvento.Codice == "disattivazione" && evento.DataFine != null && evento.DataEffettivaFine != null
+                //    ? "Riattivazione"
+                //    : evento.TipoEvento.Nome;
+                //var creatore = evento.Creatore;
+                //var oggetto = $"Richiesta “{tipoEvento}” procedimento “{tpt.NomeSpecifico}” ({tpt.ID})";
+                //var messaggio =
+                //    $"Salve,<br />" +
+                //    $"vi comunichiamo che la richiesta di “{tipoEvento}” del procedimento “{tpt.NomeSpecifico}” ({tpt.ID}) " +
+                //    $"creata da “{creatore.Nome} {creatore.Cognome}” in data {evento.DataCreazione.ToShortDateString()} " +
+                //    $"è stata effettuata correttamente.<br /><br />" +
+                //    "Cordiali saluti,<br />" +
+                //    "Team ProcediMarche";
+
+                var mailFrom = ConfigurationManager.AppSettings["email.indirizzo"];
+                List<string> destinatario = new List<string>();
+                destinatario.Add(mailFrom);
+
+                string messaggio = "<strong>Nominativo/Azienda:</strong> " + txtNominativo.Text + "<br>";
+                messaggio += "<strong>Email:</strong> " + txtEmail.Text.Trim() + "<br><br>";
+                messaggio += txtCorpo.Text;
+
+                EmailHelper.Send(messaggio, destinatario, null, txtOggetto.Text);
+
+                return true;
+            }
+            catch (Exception exc)
+            {
+                return false;
+            }
+        }
+
+        protected void btnInviaEmail_Click(object sender, EventArgs e)
+        {
+            inviaEmail();
         }
     }
 }

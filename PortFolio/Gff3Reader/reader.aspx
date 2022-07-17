@@ -153,7 +153,7 @@
                     <p class="card-text">Seleziona uno o più file in formato .gff3 e clicca sul pulsante carica. I risultati verranno mostrati in un unica tabella.</p>
                     <div class="card-body row">
                         <div class="col-md-5">
-                            <asp:FileUpload ID="fileCaricato" runat="server" CssClass="form-control" AllowMultiple="true" />
+                            <asp:FileUpload ID="fileCaricato" runat="server" CssClass="form-control" AllowMultiple="true" accept=".gff3" />
                             <asp:Button
                                 ID="btnCarica"
                                 runat="server"

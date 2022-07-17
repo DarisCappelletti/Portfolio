@@ -16,6 +16,33 @@
         .card {
             margin-bottom: 30px;
         }
+
+        .card-hover {
+            cursor: pointer;
+            color: black;
+            text-decoration: none;
+        }
+
+            .card-hover:hover {
+                color: black;
+                -webkit-box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.32);
+                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.32);
+                transform: scale(1.1);
+                transition: transform .2s;
+            }
+
+        .social-pill {
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            background-color: #0d6efd;
+            font-size: 0.95em;
+        }
+
+            .social-pill:hover {
+                    color: #fff;
+                    background-color: #0b5ed7;
+            }
     </style>
 
     <div>
@@ -129,7 +156,7 @@
                     <span class="badge rounded-pill bg-primary">PHP</span>
                 </div>
 
-                <p class="card-text"> Ho utilizzato le seguenti librerie:</p>
+                <p class="card-text">Ho utilizzato le seguenti librerie:</p>
 
                 <div class="mb-2">
                     <span class="badge rounded-pill bg-primary">Bootstrap</span>
@@ -137,16 +164,17 @@
                     <span class="badge rounded-pill bg-primary">Graph.js</span>
                 </div>
 
-                <p class="card-text">Nel progetto è stata strutturato un progetto di API dove le strutture ed i comuni potevano effettuare delle chiamate</p>
+                <p class="card-text">Nella soluzione è stato creato un progetto di Web API dove le strutture ed i comuni possono effettuare delle chiamate</p>
                 <p class="card-text">per gestire i procedimenti/le pratiche create nel sito.</p>
 
-                Esempi di APi integrate
-        <ul>
-            <li>Ricerca sinonimi in base alla parola inserita</li>
-            <li>Verifica festività nazionali</li>
-            <li>Integrazione sistema di ticketing</li>
-            <li>Integrazione sistema di salvataggio dati su tabelle</li>
-        </ul>
+                Inoltre sono state integrate delle chiamate ad API esterne ovvero:
+
+                <ul>
+                    <li>Ricerca sinonimi in base alla parola inserita</li>
+                    <li>Verifica festività nazionali</li>
+                    <li>Integrazione sistema di ticketing</li>
+                    <li>Integrazione sistema di salvataggio dati su tabelle</li>
+                </ul>
 
                 <p class="card-text"><strong>La ricerca dei sinonimi</strong> è stata implementata per estrapolare tutti i sinonimi in base ad una parola passata.</p>
                 <p class="card-text">
@@ -174,22 +202,22 @@
             </h2>
             <div class="card-body">
                 <div class="list-group">
-                  <a class="list-group-item list-group-item-action" aria-current="true">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">L-31 - Laurea triennale in scienze e tecnologie informatiche</h5>
-                      <small>5 anni fa</small>
-                    </div>
-                    <p class="mb-1">Università degli studi di Camerino</p>
-                    <%--<small>And some small print.</small>--%>
-                  </a>
-                  <a class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">Diploma di istruzione secondaria superiore ad indirizzo scientifico</h5>
-                      <small class="text-muted">11 anni fa</small>
-                    </div>
-                    <p class="mb-1">Liceo scientifico di Sarnano</p>
-                    <%--<small class="text-muted">And some muted small print.</small>--%>
-                  </a>
+                    <a class="list-group-item list-group-item-action" aria-current="true">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">L-31 - Laurea triennale in scienze e tecnologie informatiche</h5>
+                            <small>5 anni fa</small>
+                        </div>
+                        <p class="mb-1">Università degli studi di Camerino</p>
+                        <%--<small>And some small print.</small>--%>
+                    </a>
+                    <a class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Diploma di istruzione secondaria superiore ad indirizzo scientifico</h5>
+                            <small class="text-muted">11 anni fa</small>
+                        </div>
+                        <p class="mb-1">Liceo scientifico di Sarnano</p>
+                        <%--<small class="text-muted">And some muted small print.</small>--%>
+                    </a>
                 </div>
             </div>
         </div>
@@ -202,36 +230,127 @@
             <div class="card-body">
                 <p class="card-text">Nel tempo libero mi piace studiare nuove tecnologie e nuovi modi di implementazione</p>
                 <p class="card-text">Attualmente ho creato questi progetti</p>
-                <ul>
-                    <li>Gff3 reader</li>
-                    <li>Ricerca di treni</li>
-                </ul>
 
-                <p class="card-text">
-                    <strong>Gff3 reader:</strong>
-                    Ho sviluppato questo progetto in C# Web Forms.
-                Permette il caricamento di file in formato gff3, la visione dei dati in formato tabellare con la possibilità di
-                ricerca/esclusione di parole, la possibilità di vedere/nascondere colonne della tabella, paginazione per gff3
-                di grandi dimensione con possibilità di modificare i risultati per pagina.
-                </p>
-                <p class="card-text">
-                    <strong>Ricerca treni:</strong>
-                    Ho sviluppato questo progetto in C# Web Forms.
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <a class="card card-hover h-100" href="Gff3Reader/reader.aspx">
+                            <h2 class="card-header text-center">
+                                <i class="fa-solid fa-dna"></i>Gff3 reader
+                            </h2>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Ho sviluppato questo progetto in C# Web Forms.
+                            Permette il caricamento di file in formato gff3, la visione dei dati in formato tabellare con la possibilità di
+                            ricerca/esclusione di parole, la possibilità di vedere/nascondere colonne della tabella, paginazione per gff3
+                            di grandi dimensione con possibilità di modificare i risultati per pagina.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <span class="badge rounded-pill bg-primary">C# Web forms</span>
+                                    <span class="badge rounded-pill bg-primary">Html</span>
+                                    <span class="badge rounded-pill bg-primary">Jquery</span>
+                                    <span class="badge rounded-pill bg-primary">Javascript</span>
+                                </small>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Ricerca treni -->
+                    <div class="col">
+                        <a class="card card-hover h-100">
+                            <h2 class="card-header text-center">
+                                <i class="fa-solid fa-train"></i>Ricerca treni
+                            </h2>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Ho sviluppato questo progetto in C# Web Forms.
                 Permette la ricerca di treni impostando la stazione di partenza e di arrivo ed impostando una data di inizio e una data di fine.
                 Il sito si differenziato dalle solite app per la ricerca dei treni perchè permette di impostare un range di date,
                 ovvero impostando la data di inizio e di fine il sito restituirà tutte le soluzioni possibili in questo intervallo di date
                 in modo da poter pianificare viaggi in base all'offerta migliore.
-                </p>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <span class="badge rounded-pill bg-primary">C# Web forms</span>
+                                    <span class="badge rounded-pill bg-primary">Html</span>
+                                    <span class="badge rounded-pill bg-primary">Jquery</span>
+                                    <span class="badge rounded-pill bg-primary">Javascript</span>
+                                </small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Contatti -->
         <div class="card">
             <h2 id="scrollContatti" class="card-header text-center">
-                <i class="fa-solid fa-envelope"></i> Contatti
+                <i class="fa-solid fa-address-book"></i>Contatti
             </h2>
             <div class="card-body">
-                <p>Da implementare...</p>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <h2 class="card-header text-center">
+                                <i class="fa-solid fa-envelope"></i>Email
+                            </h2>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Potete contattarmi via email compilando questo form.
+                                </p>
+
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <asp:TextBox ID="txtNominativo" runat="server" CssClass="form-control" placeholder="Nominativo o il nome dell'azienda" />
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email dove ricontattarti" />
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <asp:TextBox ID="txtOggetto" runat="server" CssClass="form-control" placeholder="Oggetto della tua richiesta" />
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <asp:TextBox
+                                            ID="txtCorpo"
+                                            runat="server"
+                                            CssClass="form-control normal"
+                                            placeholder="Inserisci il messaggio"
+                                            TextMode="MultiLine" />
+                                    </div>
+                                </div>
+                                <asp:Button ID="btnInviaEmail" runat="server" OnClick="btnInviaEmail_Click" CssClass="btn btn-secondary" Text="Invia" />
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <span class="badge rounded-pill bg-primary">C# Web forms</span>
+                                    <span class="badge rounded-pill bg-primary">Html</span>
+                                    <span class="badge rounded-pill bg-primary">Jquery</span>
+                                    <span class="badge rounded-pill bg-primary">Javascript</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ricerca treni -->
+                    <div class="col text-center">
+                        <a class="badge social-pill" href="https://it.linkedin.com/in/dariscappelletti" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i> Linkedin
+                        </a>
+                        <a class="badge social-pill" href="https://github.com/DarisCappelletti"  target="_blank">
+                            <i class="fa-brands fa-github-square"></i> Github
+                        </a>
+                        <a class="badge social-pill" href="https://stackoverflow.com/users/19482018/zackary"  target="_blank">
+                            StackOverflow
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -242,15 +361,6 @@
             var bars = $('.progress-bar');
             for (i = 0; i < bars.length; i++) {
                 var progress = $(bars[i]).attr('aria-valuenow');
-                console.log(progress);
-
-                //if (progress >= "90" || progress == "100") {
-                //    $(bars[i]).addClass("bg-success");
-                //} else if (progress >= "50" && progress < "90") {
-                //    $(bars[i]).addClass("bg-warning");
-                //} else {
-                //    $(bars[i]).addClass("bg-danger");
-                //}
 
                 $(bars[i]).css('background-color', getColor($(this), progress / 100))
             }
@@ -263,5 +373,11 @@
             console.log(hue)
             return ["hsl(", hue, ",65%,50%)"].join("");
         }
+    </script>
+
+    <script type="text/javascript" src="lib/vendor/autosize/js/autosize.min.js"></script>
+    <script>
+        var ta = document.querySelector('textarea');
+        autosize(ta);
     </script>
 </asp:Content>
