@@ -21,6 +21,7 @@
             cursor: pointer;
             color: black;
             text-decoration: none;
+            z-index: 10;
         }
 
             .card-hover:hover {
@@ -40,9 +41,35 @@
         }
 
             .social-pill:hover {
-                    color: #fff;
-                    background-color: #0b5ed7;
+                color: #fff;
+                background-color: #0b5ed7;
             }
+
+        .accordion-button {
+            /* create a grid */
+            display: grid;
+            /* create colums. 1fr means use available space */
+            grid-template-columns: 1fr max-content max-content;
+            align-items: center;
+            grid-gap: 10px;
+            padding-left: 30px;
+        }
+
+            .accordion-button:after {
+                position: absolute;
+                margin-left: 5px;
+            }
+
+        /* On screens that are 600px or less, set the background color to olive */
+        @media screen and (max-width: 768px) {
+            .accordion-pills {
+                display: grid;
+            }
+
+                .accordion-pills > .badge {
+                    margin-bottom: 2px;
+                }
+        }
     </style>
 
     <div>
@@ -139,37 +166,54 @@
                 <i class="fa-solid fa-briefcase"></i>Esperienze lavorative
             </h2>
             <div class="card-body">
-                <p class="card-text">
+                <div class="card-text">
                     Ho lavorato come programmatore per 2 anni per l'azienda <a href="https://www.seiconsulting.it/" target="_blank">"SEI Consulting"</a> come libero professionista
-            su un progetto chiamato <a href="https://procedimenti.regione.marche.it/">"ProcediMarche"</a> un sito web della "Regione Marche" dove è possibile gestire i procedimenti
-            della regione e la compilazione di pratiche con form customizzabili
-                </p>
-                <p class="card-text">Il progetto è stato sviluppato con le seguenti tecnologie</p>
+            su due progetti:
+                    <ul>
+                        <li><a href="https://procedimenti.regione.marche.it/">"ProcediMarche"</a></li>
+                        <li><a href="#">"GoodPa"</a></li>
+                    </ul>
 
-                <div class="mb-2">
-                    <span class="badge rounded-pill bg-primary">C# Web forms</span>
-                    <span class="badge rounded-pill bg-primary">C# Web API</span>
-                    <span class="badge rounded-pill bg-primary">C# MVC</span>
-                    <span class="badge rounded-pill bg-primary">Html</span>
-                    <span class="badge rounded-pill bg-primary">Jquery</span>
-                    <span class="badge rounded-pill bg-primary">Javascript</span>
-                    <span class="badge rounded-pill bg-primary">PHP</span>
-                </div>
+                    <div class="accordion" id="accordionProcediMarche">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingProcediMarche">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseProcediMarche"
+                                    aria-expanded="true"
+                                    aria-controls="collapseProcediMarche">
+                                    <span class="mb-1">ProcediMarche</span><br />
+                                    <div style="font-size: 0.82em;" class="accordion-pills">
+                                        <span class="badge rounded-pill bg-primary">C# Web forms</span>
+                                        <span class="badge rounded-pill bg-primary">C# Web API</span>
+                                        <span class="badge rounded-pill bg-primary">C# MVC</span>
+                                        <span class="badge rounded-pill bg-primary">Html</span>
+                                        <span class="badge rounded-pill bg-primary">Jquery</span>
+                                        <span class="badge rounded-pill bg-primary">Javascript</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseProcediMarche" class="accordion-collapse collapse" aria-labelledby="headingProcediMarche" data-bs-parent="#accordionProcediMarche">
+                                <div class="accordion-body">
+                                    Un sito web della <a href="https://www.regione.marche.it/" target="_blank">"Regione Marche"</a> dove è possibile gestire i procedimenti
+                                      della regione e dei comuni con la possibilità di creare form customizzabili da mettere a disposizione ai cittadini/aziende.
 
-                <p class="card-text">Ho utilizzato le seguenti librerie:</p>
+                                    <p class="card-text">Ho utilizzato le seguenti librerie:</p>
 
-                <div class="mb-2">
-                    <span class="badge rounded-pill bg-primary">Bootstrap</span>
-                    <span class="badge rounded-pill bg-primary">FontAwesome</span>
-                    <span class="badge rounded-pill bg-primary">Graph.js</span>
-                </div>
+                                    <div class="mb-2">
+                                        <span class="badge rounded-pill bg-primary">Bootstrap</span>
+                                        <span class="badge rounded-pill bg-primary">FontAwesome</span>
+                                        <span class="badge rounded-pill bg-primary">Graph.js</span>
+                                    </div>
 
-                <p class="card-text">
-                    Nella soluzione è stato creato un progetto di Web API dove le strutture ed i comuni possono effettuare delle chiamate
-                    per gestire i procedimenti/le pratiche create nel sito.
-                </p>
+                                    <p class="card-text">
+                                        Nella soluzione è stato creato un progetto di Web API dove le strutture ed i comuni possono effettuare delle chiamate
+                    per gestire i procedimenti/le pratiche creati nel sito.
+                                    </p>
 
-                Inoltre sono state integrate delle chiamate ad API esterne ovvero:
+                                    Inoltre sono state integrate delle chiamate ad API esterne ovvero:
 
                 <ul>
                     <li>Ricerca sinonimi in base alla parola inserita</li>
@@ -178,22 +222,52 @@
                     <li>Integrazione sistema di salvataggio dati su tabelle</li>
                 </ul>
 
-                <p class="card-text"><strong>La ricerca dei sinonimi</strong> è stata implementata per estrapolare tutti i sinonimi in base ad una parola passata.</p>
-                <p class="card-text">
-                    L'integrazione nel progetto è avvenuta impostando una chiamata asincrona che interrogasse le api in base
+                                    <p class="card-text"><strong>La ricerca dei sinonimi</strong> è stata implementata per estrapolare tutti i sinonimi in base ad una parola passata.</p>
+                                    <p class="card-text">
+                                        L'integrazione nel progetto è avvenuta impostando una chiamata asincrona che interrogasse le api in base
             all'input dell'utente, in questo modo dopo 1 secondo di delay la chiamata restituiva i sinonimi in modo da 
             facilitare la ricerca all'interno del sito.
-                </p>
+                                    </p>
 
-                <p class="card-text">
-                    <strong>La verifica delle festività nazionali</strong> è stata implementata per completare una funzionalità di creazione di richieste di
+                                    <p class="card-text">
+                                        <strong>La verifica delle festività nazionali</strong> è stata implementata per completare una funzionalità di creazione di richieste di
             attivazione/disattivazione da parte degli utenti limitando le date possibili in base all'orario dell'helpdesk/ai giorni lavorativi e alle festività
             tramite l'interrogazione delle API
-                </p>
-                <p class="card-text">
-                    Inserendo una data corretta l'utente può completare l'operazione ed effettuare la richiesta, in caso contrario
+                                    </p>
+                                    <p class="card-text">
+                                        Inserendo una data corretta l'utente può completare l'operazione ed effettuare la richiesta, in caso contrario
             verrà mostrato un messaggio di errore che invita l'utente alla modifica della data.
-                </p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingGoodPa">
+                                <button
+                                    class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseGoodPa"
+                                    aria-expanded="false"
+                                    aria-controls="collapseGoodPa">
+                                    <span class="mb-1">GoodPa</span><br />
+                                    <div style="font-size: 0.82em;" class="accordion-pills">
+                                        <span class="badge rounded-pill bg-warning">CKAN Framework</span>
+                                        <span class="badge rounded-pill bg-primary">PHP</span>
+                                        <span class="badge rounded-pill bg-primary">Html</span>
+                                        <span class="badge rounded-pill bg-primary">Jquery</span>
+                                        <span class="badge rounded-pill bg-primary">Javascript</span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseGoodPa" class="accordion-collapse collapse" aria-labelledby="headingGoodPa" data-bs-parent="#accordionProcediMarche">
+                                <div class="accordion-body">
+                                       work in progress...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -335,13 +409,12 @@
                     <!-- Social -->
                     <div class="col text-center">
                         <a class="badge social-pill" href="https://it.linkedin.com/in/dariscappelletti" target="_blank">
-                            <i class="fa-brands fa-linkedin"></i> Linkedin
+                            <i class="fa-brands fa-linkedin"></i>Linkedin
                         </a>
-                        <a class="badge social-pill" href="https://github.com/DarisCappelletti"  target="_blank">
-                            <i class="fa-brands fa-github-square"></i> Github
+                        <a class="badge social-pill" href="https://github.com/DarisCappelletti" target="_blank">
+                            <i class="fa-brands fa-github-square"></i>Github
                         </a>
-                        <a class="badge social-pill" href="https://stackoverflow.com/users/19482018/zackary"  target="_blank">
-                            StackOverflow
+                        <a class="badge social-pill" href="https://stackoverflow.com/users/19482018/zackary" target="_blank">StackOverflow
                         </a>
                     </div>
                 </div>
