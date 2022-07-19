@@ -308,6 +308,7 @@
                 <p class="card-text">Attualmente ho creato questi progetti</p>
 
                 <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!-- Gff3 reader -->
                     <div class="col">
                         <a class="card card-hover h-100" href="Gff3Reader/reader.aspx">
                             <h2 class="card-header text-center">
@@ -352,6 +353,28 @@
                                     <span class="badge rounded-pill bg-primary">Html</span>
                                     <span class="badge rounded-pill bg-primary">Jquery</span>
                                     <span class="badge rounded-pill bg-primary">Javascript</span>
+                                </small>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Gestione comande -->
+                    <div class="col">
+                        <a class="card card-hover h-100" href="https://github.com/DarisCappelletti/GestioneComande" target="_blank">
+                            <h2 class="card-header text-center">
+                                <i class="fa-solid fa-utensils"></i> Gestione comande
+                            </h2>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Ho sviluppato questo progetto in C# Windows forms.
+                Permette la creazione di elementi "piatti" a cui è possibile assegnare una quantità ed un costo e che potranno essere modificati/eliminati.
+                                    Permette la creazione di una "comanda" basata sulla lista dei "piatti" creati con la possibilità di inserire il Nominativo del cliente.
+                                    Alla generazione della comanda il sistema andrà a scalare la quantità dei piatti rimanenti e stamperà la comanda con tutte le informazioni.
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">
+                                    <span class="badge rounded-pill bg-primary">C# Windows form</span>
+                                    <span class="badge rounded-pill bg-primary">Html</span>
                                 </small>
                             </div>
                         </a>
