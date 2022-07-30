@@ -30,6 +30,17 @@
           display: none;
           z-index: 10;
         }
+
+        .footer-element-dx p {
+            float: right;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .footer-element-sx p, .footer-element-dx p {
+                text-align: center;
+                float: none;
+            }
+        }
     </style>
 </head>
 <body style="padding-top: 80px;" data-bs-spy="scroll" data-bs-target="#nav-menu-top" data-bs-offset="0" class="scrollspy-example" tabindex="0">
@@ -127,7 +138,21 @@
                     id="btn-back-to-top">
                     <i class="fas fa-arrow-up"></i>
                 </button>
+                <div class="row">
+                    <div class="footer-element-sx col-md-6">
                 <p>&copy; <%: DateTime.Now.Year %> - Daris Cappelletti</p>
+                    </div>
+                    
+                    <div class="footer-element-dx col-md-6">
+                <p>Sito sviluppato in C# web forms
+                    <a href="https://github.com/DarisCappelletti/Portfolio" class="badge social-pill">
+                        <i class="fa-brands fa-github-square"></i>
+                    </a>
+                </p>
+                        
+                    </div>
+                </div>
+                
             </footer>
             
             <!-- Go on top -->
