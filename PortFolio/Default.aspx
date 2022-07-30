@@ -400,20 +400,37 @@
                                     Potete contattarmi via email compilando questo form.
                                 </p>
 
-                                <div class="row mb-2">
-                                    <div class="col-md-12">
-                                        <asp:TextBox ID="txtNominativo" runat="server" CssClass="form-control" placeholder="Nominativo o il nome dell'azienda" />
-                                    </div>
+                                <div class="form-floating mb-3">
+                                  <asp:TextBox 
+                                      ID="txtNominativo" 
+                                      runat="server" 
+                                      CssClass="form-control" 
+                                      placeholder="Mario Rossi" />
+                                  <label for="txtNominativo">Nominativo o il nome dell'azienda</label>
                                 </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-12">
-                                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email dove ricontattarti" />
-                                    </div>
+                                <div class="form-floating mb-3">
+                                  <asp:TextBox 
+                                      ID="txtEmail" 
+                                      runat="server" 
+                                      CssClass="form-control" 
+                                      placeholder="email@test.com" />
+                                  <label for="txtEmail">Email dove ricontattarti</label>
                                 </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-12">
-                                        <asp:TextBox ID="txtOggetto" runat="server" CssClass="form-control" placeholder="Oggetto della tua richiesta" />
-                                    </div>
+                                <div class="form-floating mb-3">
+                                  <asp:TextBox 
+                                      ID="TextBox1" 
+                                      runat="server" 
+                                      CssClass="form-control" 
+                                      placeholder="email@test.com" />
+                                  <label for="txtEmail">Email dove ricontattarti</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                  <asp:TextBox 
+                                      ID="txtOggetto" 
+                                      runat="server" 
+                                      CssClass="form-control" 
+                                      placeholder="Offerta di lavoro" />
+                                  <label for="txtEmail">Oggetto della tua richiesta</label>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
