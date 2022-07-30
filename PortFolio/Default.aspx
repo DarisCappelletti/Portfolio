@@ -418,14 +418,6 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                   <asp:TextBox 
-                                      ID="TextBox1" 
-                                      runat="server" 
-                                      CssClass="form-control" 
-                                      placeholder="email@test.com" />
-                                  <label for="txtEmail">Email dove ricontattarti</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                  <asp:TextBox 
                                       ID="txtOggetto" 
                                       runat="server" 
                                       CssClass="form-control" 
